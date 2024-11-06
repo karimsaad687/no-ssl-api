@@ -17,6 +17,7 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
+
 class NoSslApiModule(reactContext: ReactApplicationContext) :
   ReactContextBaseJavaModule(reactContext) {
 
@@ -33,6 +34,7 @@ class NoSslApiModule(reactContext: ReactApplicationContext) :
 
   @ReactMethod
   fun noSslApi(url: String, promise: Promise) {
+
     AndroidNetworking.initialize(reactContext, getUnsafeOkHttpClient())
     AndroidNetworking.get(url).build().getAsJSONObject(object: JSONObjectRequestListener{
       override fun onResponse(response: JSONObject?) {
