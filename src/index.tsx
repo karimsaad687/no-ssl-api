@@ -20,3 +20,7 @@ const NoSslApi = NativeModules.NoSslApi
 export function multiply(a: number, b: number): Promise<number> {
   return NoSslApi.multiply(a, b);
 }
+
+export function noSslApi(url: string): Promise<string> {
+  return NoSslApi.noSslApi(url);
+}

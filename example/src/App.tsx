@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'no-ssl-api';
+import { multiply, noSslApi } from 'no-ssl-api';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
+  const [result, setResult] = useState<String>();
 
   useEffect(() => {
-    multiply(3, 7).then(setResult);
+    //multiply(3, 7).then(setResult);
+    noSslApi("https://uat.qaema.com/sdk/ob/accounts-information/v1/accounts-links?AccountsLinkId=&PSUId=255cc&FinancialInstitutionId=&FinancialInstitutionName=SAMA&Status=Active&page=1").then(setResult)
   }, []);
 
   return (

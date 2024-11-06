@@ -15,4 +15,7 @@ module.exports = getConfig(getDefaultConfig(__dirname), {
   root,
   pkg,
   project: __dirname,
+  resolver: {
+    sourceExts: ['js', 'json', 'ts', 'tsx'],
+  },
 });
